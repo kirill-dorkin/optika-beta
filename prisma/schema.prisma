@@ -14,7 +14,7 @@ datasource db {
 }
 
 model Product {
-  id             String                   @id @default(uuid())
+  id             String                   @id @map("_id") @default(auto()) @db.ObjectId
   slug           String                   @unique
   title          String
   mainImage      String
@@ -30,13 +30,13 @@ model Product {
 }
 
 model Image {
-  imageID   String @id @default(uuid())
+  imageID   String @id @map("_id") @default(auto()) @db.ObjectId
   productID String
   image     String
 }
 
 model User {
-  id       String     @id @default(uuid())
+  id       String     @id @map("_id") @default(auto()) @db.ObjectId
   email    String     @unique
   password String?
   role     String?    @default("user")
@@ -44,7 +44,7 @@ model User {
 }
 
 model Customer_order {
-  id          String                   @id @default(uuid())
+  id          String                   @id @map("_id") @default(auto()) @db.ObjectId
   name        String
   lastname    String
   phone       String
@@ -63,7 +63,7 @@ model Customer_order {
 }
 
 model customer_order_product {
-  id              String         @id @default(uuid())
+  id              String         @id @map("_id") @default(auto()) @db.ObjectId
   customerOrder   Customer_order @relation(fields: [customerOrderId], references: [id])
   customerOrderId String
   product         Product        @relation(fields: [productId], references: [id])
@@ -72,13 +72,13 @@ model customer_order_product {
 }
 
 model Category {
-  id       String    @id @default(uuid())
+  id       String    @id @map("_id") @default(auto()) @db.ObjectId
   name     String    @unique
   products Product[] // Define a one-to-many relationship
 }
 
 model Wishlist {
-  id        String  @id @default(uuid())
+  id        String  @id @map("_id") @default(auto()) @db.ObjectId
   product   Product @relation(fields: [productId], references: [id])
   productId String
   user      User    @relation(fields: [userId], references: [id])
