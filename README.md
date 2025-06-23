@@ -138,11 +138,11 @@ We have applied this method by examining the code after each new added functiona
   <li><p>This step is optional, but highly recommended if you don't have a database management app. Because HeidiSQL is beginner-friendly and very easy to use than other database management options. Here is a link to the tutorial which explains how to download and install HeidiSQL: <a href="https://www.youtube.com/watch?v=oJ24MyLeiPs" target="_blank">https://www.youtube.com/watch?v=oJ24MyLeiPs</a> and here is a link where you can download it: <a href="https://www.heidisql.com" target="_blank">https://www.heidisql.com</a></p></li>
   <li><p>When you install all the programs you need on your computer you need to download the project. When you download the project, you need to extract it.</p></li>
   <li><p>After you extract the project you need to open the project folder in your code editor and in the root create a file with the name .env.</p></li>
-  <li><p>You need to put the following code in the .env file and instead of username and password put your MySQL username and password:</p></li>
+  <li><p>You need to put the following code in the .env file and adjust the MongoDB connection string if necessary:</p></li>
 </ol>
 
 ```
-DATABASE_URL="mysql://username:password@localhost:3306/singitronic_nextjs"
+DATABASE_URL="mongodb://localhost:27017/optika"
 NEXTAUTH_SECRET=12D16C923BA17672F89B18C1DB22A
 NEXTAUTH_URL=http://localhost:3000
 ```
@@ -150,7 +150,7 @@ NEXTAUTH_URL=http://localhost:3000
 <p>7. After you do it, you need to create another .env file in the server folder and put the same DATABASE_URL you used in the previous .env file:</p>
 
 ```
-DATABASE_URL="mysql://username:password@localhost:3306/singitronic_nextjs"
+DATABASE_URL="mongodb://localhost:27017/optika"
 ```
 
 <p>8. Now you need to open your terminal of choice in the root folder of the project and write:</p>
