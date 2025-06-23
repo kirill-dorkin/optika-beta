@@ -1,3 +1,28 @@
+## Quick Start
+
+1. Copy `.env.example` to `.env` in the project root and also copy it to `server/.env`.
+2. Update `DATABASE_URL` and other values in both `.env` files.
+3. Install dependencies:
+   ```bash
+   npm install
+   cd server && npm install
+   ```
+4. Run database migrations and seed demo data:
+   ```bash
+   npx prisma migrate dev
+   cd utils && node insertDemoData.js
+   cd ..
+   ```
+5. Start the backend server:
+   ```bash
+   node app.js
+   ```
+6. In another terminal start the Next.js app from the project root:
+   ```bash
+   npm run dev
+   ```
+
+---
 <h1>Electronics eCommerce Shop With Admin Dashboard in Next.js and Node.js</h1>
 
 <p><b>Electronics eCommerce shop with admin dashboard in Next.js and Node.js</b> is a <b>free eCommerce store</b> developed using Next.js, Node.js and MySQL. The application is completely built from scratch(custom design) and completely responsive.
