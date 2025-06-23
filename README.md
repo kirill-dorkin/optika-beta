@@ -7,9 +7,10 @@
    npm install
    cd server && npm install
    ```
-4. Run database migrations and seed demo data:
+4. Push the Prisma schema and seed demo data:
    ```bash
-   npx prisma migrate dev
+   npx prisma db push
+   npx prisma generate
    cd utils && node insertDemoData.js
    cd ..
    ```
@@ -167,10 +168,11 @@ cd server
 npm install
 ```
 
-<p>10. You will need to run the Prisma migration now. Make sure you are in the server folder and write:</p>
+<p>10. You will need to push the Prisma schema now. Make sure you are in the server folder and run:</p>
 
 ```
-npx prisma migrate dev
+npx prisma db push
+npx prisma generate
 ```
 
 <p>11. Next is to insert demo data. To do it you need to go to the server/utills folder and call insertDemoData.js:</p>
