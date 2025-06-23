@@ -7,9 +7,10 @@
    npm install
    cd server && npm install
    ```
-4. Run database migrations and seed demo data:
+4. Push the Prisma schema and seed demo data:
    ```bash
-   npx prisma migrate dev
+   npx prisma db push
+   npx prisma generate
    cd utils && node insertDemoData.js
    cd ..
    ```
@@ -25,7 +26,7 @@
 ---
 <h1>Electronics eCommerce Shop With Admin Dashboard in Next.js and Node.js</h1>
 
-<p><b>Electronics eCommerce shop with admin dashboard in Next.js and Node.js</b> is a <b>free eCommerce store</b> developed using Next.js, Node.js and MySQL. The application is completely built from scratch(custom design) and completely responsive.
+<p><b>Electronics eCommerce shop with admin dashboard in Next.js and Node.js</b> is a <b>free eCommerce store</b> developed using Next.js, Node.js and MongoDB. The application is completely built from scratch(custom design) and completely responsive.
 Singitronic is a modern online shop that specializes in selling all types of electronic products. The goal of the project is to create a modern web application <b>by following key stages in software engineering</b>. 
 I have created this online shop as part of my college exam in software engineering with <b>Bojan Cesnak</b> - <a href="https://github.com/cesnak02" target="_blank">@cesnak02</a>. Together with the application, we created detailed <b>40 pages software engineering documentation</b>. We will describe the main parts of the documentaion in the repository description. Main resource for the software engineering documentation is the book „Razvoj aplikativnog softvera“ by Singidunum University professor Violeta Tomašević. Also, college lectures by Violeta Tomašević and Petar Kresoja helped us a lot with the implementation of the application.</p>
 
@@ -134,8 +135,8 @@ We have applied this method by examining the code after each new added functiona
 <h2>Instructions</h2>
 <ol>
   <li><p>To run the app you first need to download and install Node.js and npm on your computer. Here is a link to the tutorial that explains how to install them: <a href="https://www.youtube.com/watch?v=4FAtFwKVhn0" target="_blank">https://www.youtube.com/watch?v=4FAtFwKVhn0</a>. Also here is the link where you can download them: <a href="https://nodejs.org/en" target="_blank">https://nodejs.org/en</a></p></li>
-  <li><p>When you install Node.js and npm on your computer you need to download and install MySQL on your computer. Here is another link to the tutorial which explains how you can download and install MySQL on your computer: <a target="_blank" href="https://www.youtube.com/watch?v=BxdSUGBs0gM&t=212s">https://www.youtube.com/watch?v=BxdSUGBs0gM&t=212s</a>. Here is a link where you can download MySQL: <a href="https://dev.mysql.com/downloads/installer/" target="_blank">https://dev.mysql.com/downloads/installer/</a></p></li>
-  <li><p>This step is optional, but highly recommended if you don't have a database management app. Because HeidiSQL is beginner-friendly and very easy to use than other database management options. Here is a link to the tutorial which explains how to download and install HeidiSQL: <a href="https://www.youtube.com/watch?v=oJ24MyLeiPs" target="_blank">https://www.youtube.com/watch?v=oJ24MyLeiPs</a> and here is a link where you can download it: <a href="https://www.heidisql.com" target="_blank">https://www.heidisql.com</a></p></li>
+  <li><p>When you install Node.js and npm on your computer you also need to install MongoDB. Here is another link to a tutorial which explains how you can download and install MongoDB: <a target="_blank" href="https://www.youtube.com/watch?v=-0MwMmR7dC0">https://www.youtube.com/watch?v=-0MwMmR7dC0</a>. Here is a link where you can download MongoDB: <a href="https://www.mongodb.com/try/download/community" target="_blank">https://www.mongodb.com/try/download/community</a></p></li>
+  <li><p>This step is optional, but highly recommended if you don't have a database management app. Because MongoDB Compass is beginner-friendly and very easy to use. Here is a link to the tutorial which explains how to download and install MongoDB Compass: <a href="https://www.youtube.com/watch?v=--DovYgvPww" target="_blank">https://www.youtube.com/watch?v=--DovYgvPww</a> and here is a link where you can download it: <a href="https://www.mongodb.com/try/download/compass" target="_blank">https://www.mongodb.com/try/download/compass</a></p></li>
   <li><p>When you install all the programs you need on your computer you need to download the project. When you download the project, you need to extract it.</p></li>
   <li><p>After you extract the project you need to open the project folder in your code editor and in the root create a file with the name .env.</p></li>
   <li><p>You need to put the following code in the .env file and adjust the MongoDB connection string if necessary:</p></li>
@@ -167,10 +168,11 @@ cd server
 npm install
 ```
 
-<p>10. You will need to run the Prisma migration now. Make sure you are in the server folder and write:</p>
+<p>10. You will need to push the Prisma schema now. Make sure you are in the server folder and run:</p>
 
 ```
-npx prisma migrate dev
+npx prisma db push
+npx prisma generate
 ```
 
 <p>11. Next is to insert demo data. To do it you need to go to the server/utills folder and call insertDemoData.js:</p>
